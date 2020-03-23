@@ -1,26 +1,34 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Route, Router } from 'react-router-dom';
+import login from './components/Login'
+import expenseform from './components/ExpenseForm'
+import ExpenseTracker from './components/ExpenseTracker'
+import UserManager from './components/UserManager'
+import addUser from './components/AddUser'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+class App extends React.Component {
+
+  render() {
+    return (
+      <div >
+       <h2>Expense Manager</h2><br/>
+      {/* // <Dashboard/> */}
+       <Route path="/" exact component={login}></Route>
+
+       <Route path="/expenseform" exact component={expenseform}></Route>
+      
+     
+       <Route path="/tracker" exact component={ExpenseTracker}></Route>
+      
+   
+       <Route path="/manager" exact component={UserManager}></Route>
+      
+       {/* <Route path="/nav" exact component={navigationbar}></Route> */}
+      </div>
+    );
+  }
 }
+
 
 export default App;
